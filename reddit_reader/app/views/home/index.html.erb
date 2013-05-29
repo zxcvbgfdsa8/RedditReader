@@ -9,6 +9,7 @@
   <div id="screencast-view-container" ng-show="selectedLink">
     <h2>{{selectedLink.title}}</h2>
     <p>{{selectedLink.summary}}</p>
+    <div ng-bind-html-unsafe = "renderIframe('framed_content', selectedLink.url)" width = "100%"></div>
     <p>
       Published at {{selectedLink.created_at | date: 'mediumDate'}}
       - <a ng-href="{{selectedLink.url}}">{{selectedLink.url}}</a>
