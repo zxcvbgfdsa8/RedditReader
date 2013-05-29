@@ -1,8 +1,11 @@
 RedditReader::Application.routes.draw do
+  get "home/index"
+
   scope :api do
     get "/links(.:format)" => "links#index"
     get "/links/:id(.:format)" => "links#show"
   end
+  root to: "home#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
