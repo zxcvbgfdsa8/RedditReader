@@ -1,10 +1,10 @@
 app.controller 'RedditReaderCtrl', ['$scope', 'Links', ($scope, Links) ->
-  $scope.links = Links.query ->
-    $scope.selectedLink = $scope.links[0]
-    $scope.selectedRow = 0
-
   $scope.selectedLink = null
   $scope.selectedRow = null
+  
+  $scope.links = Links.query ->
+    $scope.selectedLink = $scope.links[$scope.links.length - 1]
+    $scope.selectedRow = 0
 
   # Set the selected screencast to the one which was clicked
   $scope.showLink = (link, row) ->

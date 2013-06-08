@@ -1,7 +1,7 @@
 <div ng-controller="RedditReaderCtrl">
   <div id="screencast-list-container">
     <ul>
-      <li ng-repeat="link in links" ng-click="showLink(link, $index)">
+      <li ng-repeat="link in links | orderBy:'created_at':true" ng-click="showLink(link, $index)">
       <h3 ng-class="{active: $index == selectedRow}">{{link.title}} <small>({{link.url}})</small></h3>
       </li>
     </ul>
